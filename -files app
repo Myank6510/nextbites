@@ -1,0 +1,12 @@
+[33mcommit 728f082a5a85fe78ffb1d429a0a6486ab5394440[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mhome-page[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/home-page[m[33m, [m[1;32mmain[m[33m)[m
+Author: Myank6510 <sonimayank2009@gmail.com>
+Date:   Tue Nov 17 14:48:41 2026 +0530
+
+    chore: scaffold NextBites app
+
+ app/components/RecipeCard.tsx |  37 [32m++++++[m
+ app/data/recipes.ts           |  74 [32m++++++++++++[m
+ app/globals.css               | 261 [32m+++++++++++++++++++++++++++++++++++++++[m[31m---[m
+ app/layout.tsx                |  48 [32m+++++[m[31m---[m
+ app/page.tsx                  | 108 [32m++++++++[m[31m---------[m
+ 5 files changed, 430 insertions(+), 98 deletions(-)
