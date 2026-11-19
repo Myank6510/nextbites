@@ -24,3 +24,89 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Part 3 - Loading Screen */
+
+.loading-page {
+  min-height: 65vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 25px;
+  border: 5px solid #f4dfce;
+  border-top-color: #e77d3c;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-page h1 {
+  margin-bottom: 12px;
+  font-size: 26px;
+}
+
+.loading-page p {
+  color: #777;
+  line-height: 1.6;
+}
+
+/* Not Found Screen */
+
+.not-found-page,
+.error-page {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.not-found-emoji,
+.error-emoji {
+  margin-bottom: 20px;
+  font-size: 75px;
+}
+
+.not-found-page h1,
+.error-page h1 {
+  max-width: 650px;
+  margin: 18px 0;
+  font-size: clamp(30px, 5vw, 43px);
+}
+
+.not-found-page > p:not(.section-label),
+.error-page > p:not(.section-label) {
+  max-width: 500px;
+  margin-bottom: 25px;
+  color: #777;
+  line-height: 1.7;
+}
+
+.not-found-page .hero-button {
+  margin-top: 8px;
+}
+
+.error-page .hero-button {
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.error-digest {
+  font-size: 12px;
+}
