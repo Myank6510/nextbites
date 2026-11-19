@@ -1,19 +1,22 @@
+
 import type { NextConfig } from "next";
 
+const repoName = "nextbites";
+
+const isGitHubActions =
+  process.env.GITHUB_ACTIONS === "true";
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-    agentFeedback: true,
-  },
-  cacheComponents: true,
-  partialPrefetching: true,
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
+  output: "export",
+
+  basePath: isGitHubActions
+    ? `/${repoName}`
+    : "",
+
+  trailingSlash: true,
+
+  images: {
+    unoptimized: true,
   },
 };
 
