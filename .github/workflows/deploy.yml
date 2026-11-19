@@ -6,6 +6,7 @@ on:
     branches:
       - main
       - polish-and-deploy
+
   workflow_dispatch:
 
 permissions:

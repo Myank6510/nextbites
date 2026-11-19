@@ -3,20 +3,17 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <main className="not-found-page">
-      <div className="not-found-emoji">🍽️</div>
+    <main className="message-page">
+      <div className="message-emoji">🔍</div>
 
-      <p className="section-label">OOPS! PAGE NOT FOUND</p>
-
-      <h1>Looks like this recipe is missing!</h1>
+      <h1>404 - Recipe Not Found</h1>
 
       <p>
-        The recipe you're looking for doesn't exist.
-        Let's find something delicious instead.
+        Sorry, the recipe you are looking for does not exist.
       </p>
 
-      <Link href="/" className="hero-button">
-        Back to Home →
+      <Link href="/" className="view-button">
+        Back to Home
       </Link>
     </main>
   );

@@ -1,50 +1,34 @@
 
 "use client";
 
-type ErrorProps = {
-  error: Error & { digest?: string };
-  reset?: () => void;
-  retry?: () => void;
-};
+import { useEffect } from "react";
 
 export default function Error({
   error,
   reset,
-  retry,
-}: ErrorProps) {
-  function handleTryAgain() {
-    // Next.js 16.3+ uses retry().
-    // Older versions use reset().
-    if (retry) {
-      retry();
-    } else {
-      reset?.();
-    }
-  }
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
 
   return (
-    <main className="error-page">
-      <div className="error-emoji">😕</div>
+    <main className="message-page">
+      <div className="message-emoji">⚠️</div>
 
-      <p className="section-label">SOMETHING WENT WRONG</p>
-
-      <h1>Oops! Something didn't work.</h1>
+      <h1>Something Went Wrong!</h1>
 
       <p>
-        We couldn't load this page. Please try again.
+        We could not load this page. Please try again.
       </p>
 
-      {error.digest && (
-        <p className="error-digest">
-          Error reference: {error.digest}
-        </p>
-      )}
-
       <button
-        onClick={handleTryAgain}
-        className="hero-button"
+        className="view-button"
+        onClick={reset}
       >
-        Try again ↻
+        Try Again
       </button>
     </main>
   );
